@@ -1,63 +1,65 @@
-## Цель проекта
+# invers-helper_front
 
-- аналитика ценных бумаг, торгуемых на московской бирже
-- получение быстрого доступа к интересующей компании или ценной бумаге
-- получение данных по портфелю, через api Тинькофф инвестиции
-- добавление ценных бумаг в избанное для мониторинга
-- возможность получать
+This template should help get you started developing with Vue 3 in Vite.
 
-## Средства реализации
+## Recommended IDE Setup
 
-- Frontend на React + Next + Typescript
-- State-manager - react-toolkit
-- юнит тесты на jest
-- node.js v- 18.17.0
-- размещение на gh-pages
-- eslint для стандартизации кода
-- commitlint и husky для правильности коммитов (fix, feat, build, chore, ci, docs, style, refactor, perf, test)
-- prettier
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Структура проекта
+## Type Support for `.vue` Imports in TS
 
-### Главная страница
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
-На главной странице располагается приветствие, вводная информация о приложении, а так же ссылки на переход в доступные разделы
+If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
-### Страница облигаций
+1. Disable the built-in TypeScript Extension
+    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
-На странице идёт разветвление на страницы - ОФЗ, Региональные облигации, Корпоративные облигации
+## Customize configuration
 
-#### Страница выбранного типа облигаций
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-Внутри этих страниц доступен поиск облигаций, ниже выводятся облигации, отсортированные по доходности, но не более 10 штук, остальные скрыты пагинацией
-На карточке облигации выводится иконка, текущая цена
+## Project Setup
 
-#### Детальная страница облигации
+```sh
+npm install
+```
 
-На странице располагается график, фундаментальные показатели облигации, история и будущие купонные выплаты, цена облигации, калькулятор доходности
-цена обновляется 1 раз в 5 секунд
+### Compile and Hot-Reload for Development
 
-График: 
-- обновляется и перерисовывается каждые 5 минут
-- имеет возможность выбора несокольких промежутков времени: за все время, за 1 год, за 6 месяцев, за 1 месяц, за 1 неделю, за 1 день
-- отображает сетку, размечающую шаги - 1 шаг = 5 минут
-- на графике показывается - верхнее максимальное и нижнее минимальное значение в заданный промежуток времени
+```sh
+npm run dev
+```
 
-Фундаментальные показатели облигации: 
-- купонная доходность
-- текущая доходность
-- доходность к погашению
-- дюрация
-- дата погашения
-- количество выплат в год
-- кредитный рейтинг
-- срок
-- номинал
-- цена от номинала
+### Type-Check, Compile and Minify for Production
 
+```sh
+npm run build
+```
 
-## Ссылки на полезные источники и документацию
+### Run End-to-End Tests with [Playwright](https://playwright.dev)
 
-https://www.conventionalcommits.org/en/v1.0.0/
-https://d3js.org/ - для графиков
-https://www.moex.com/a2193 - документация moex
+```sh
+# Install browsers for the first run
+npx playwright install
+
+# When testing on CI, must build the project first
+npm run build
+
+# Runs the end-to-end tests
+npm run test:e2e
+# Runs the tests only on Chromium
+npm run test:e2e -- --project=chromium
+# Runs the tests of a specific file
+npm run test:e2e -- tests/example.spec.ts
+# Runs the tests in debug mode
+npm run test:e2e -- --debug
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
