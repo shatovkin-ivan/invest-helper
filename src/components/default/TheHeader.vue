@@ -1,27 +1,53 @@
 <template>
   <header class="header">
-    <VContainer>
+    <v-container>
       <div class="header__wrap">
-        <a href="" class="header__logo">
-          <img src="" alt="logo" />
-        </a>
+        <router-link
+          to="/"
+          class="header__logo"
+        >
+          <img
+            src=""
+            alt="logo"
+          >
+        </router-link>
         <nav class="header__menu menu">
           <ul class="menu__list">
-            <li class="menu__item" v-for="item in menuList" :key="item.id">
-              <a :href="item.to" class="menu__link">{{ item.text }}</a>
+            <li
+              v-for="item in menuList"
+              :key="item.id"
+              class="menu__item"
+            >
+              <router-link
+                :to="item.to"
+                class="menu__link"
+              >{{ item.text }}</router-link>
             </li>
           </ul>
         </nav>
         <div class="header__auth">
-          <button type="button">Войти</button>
+          <v-button
+            v-if="!isAuth"
+            type="login"
+          >
+            <template #text> Войти </template>
+          </v-button>
+          <router-link
+            v-if="isAuth"
+            to="/profile"
+          > Профиль </router-link>
         </div>
       </div>
-    </VContainer>
+    </v-container>
   </header>
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue';
 import VContainer from '@/components/ui/VContainer.vue';
+import VButton from '../ui/VButton.vue';
+
+const isAuth = ref(false);
 
 const menuList = [
   {
@@ -36,3 +62,21 @@ const menuList = [
   }
 ];
 </script>
+
+<style lang="scss" scoped>
+.header {
+    padding: 12px 0;
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.menu {
+    &__list {
+        display: flex;
+        gap: 10px;
+    }
+}
+</style>
