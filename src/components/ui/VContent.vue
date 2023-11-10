@@ -9,10 +9,14 @@
 
 <script lang="ts" setup>
 
-import VContainer from '@/components/ui/VContainer/VContainer.vue'
+import VContainer from './VContainer.vue'
 
 </script>
 
 <style lang="scss" scoped>
+
+.content {
+    padding: 20px 0;
+}
 
 </style>

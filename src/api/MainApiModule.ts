@@ -1,6 +1,6 @@
-import axios, { AxiosInstance } from 'axios';
+import axios, { type AxiosInstance } from 'axios';
 
-const baseDomain = `https://test.com`;
+const baseDomain = `http://localhost:1003`;
 const baseURL = `${baseDomain}/api`;
 
 const axiosInstance: AxiosInstance = axios.create({

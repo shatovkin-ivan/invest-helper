@@ -5,5 +5,5 @@ const apies = {
 };
 
 export const BondsFactory = {
-  get: (name) => apies[name]
+  get: (name: string) => apies[name]
 };

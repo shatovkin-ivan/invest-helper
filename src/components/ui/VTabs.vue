@@ -24,7 +24,7 @@
 import VButton from './VButton.vue';
 import { ref } from 'vue';
 import type { PropType } from 'vue'
-import type { Tabs, Tab } from '@/interfaces/tabs'
+import type { Tabs, Tab } from '@/interfaces/Tabs'
 
 const props = defineProps({
   tabs: {
@@ -44,7 +44,5 @@ const handleClick = (el: Tab) => {
     emit('handleSelect', activeTab.value)
   }
 }
-
-
 
 </script>

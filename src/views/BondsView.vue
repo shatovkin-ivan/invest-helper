@@ -3,11 +3,32 @@
     :tabs="bondsTabs"
     @handle-select="selectTab"
   />
+  <v-content>
+    <bonds-list :bonds="bonds" />
+  </v-content>
 </template>
 
 <script lang="ts" setup>
+import { ref, onMounted } from 'vue';
 import VTabs from '@/components/ui/VTabs.vue';
-import type { Tab } from '@/interfaces/tabs';
+import type { Tab } from '@/interfaces/Tabs';
+import VContent from '@/components/ui/VContent.vue';
+import BondsList from '@/components/Bonds/BondsList.vue';
+import { BondsFactory } from '@/api/MainApiFactory'
+
+const bonds = ref([])
+
+const BondsRepository = BondsFactory.get('bonds')
+const getData = async () => {
+  const { data } = await BondsRepository.getAllBonds()
+  bonds.value.push(...data)
+  console.log(bonds.value)
+}
+
+onMounted(() => {
+  getData()
+})
+
 
 const bondsTabs = [
   {
@@ -50,4 +71,4 @@ const bondsTabs = [
 const selectTab = (e: Tab) => {
   console.log(e)
 }
-</script>@/interfaces/tabs
+</script>
