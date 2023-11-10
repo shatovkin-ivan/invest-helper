@@ -2,6 +2,6 @@
 
 <template>
   <main>
-    <TheWelcome />
+    главная
   </main>
 </template>

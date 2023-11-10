@@ -8,7 +8,7 @@
     >
       <v-button
         class="tab"
-        :class="{'active': tab.id === activeTab.id }"
+        :class="{'active': tab.id === activeTab?.id }"
         @click="handleClick(tab)"
       >
         <template #text>
@@ -23,19 +23,26 @@
 
 import VButton from './VButton.vue';
 import { ref } from 'vue';
+import type { PropType } from 'vue'
+import type { Tabs, Tab } from '@/interfaces/tabs'
 
 const props = defineProps({
   tabs: {
-    type: Array,
+    type: Array as PropType<Tabs>,
     default: () => []
   }
 })
 
-const activeTab = ref(props.tabs[0])
+const emit = defineEmits(['handleSelect'])
 
-const handleClick = (el) => {
-  activeTab.value = props.tabs.find(item => item.id === el.id)
-  console.log(activeTab.value)
+const activeTab = ref<Tab | null>(props.tabs[0] ? props.tabs[0] : null)
+
+const handleClick = (el: Tab) => {
+  const foundTab = props.tabs.find(item => item.id === el.id);
+  if (foundTab) {
+    activeTab.value = foundTab;
+    emit('handleSelect', activeTab.value)
+  }
 }
 
 
