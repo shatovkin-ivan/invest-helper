@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <VContainer> footer </VContainer>
+    <v-container> footer </v-container>
   </footer>
 </template>
 
