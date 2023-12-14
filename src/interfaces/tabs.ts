@@ -3,5 +3,5 @@ export interface Tab {
     name: string,
     code: string
   }
-  
+
 export type Tabs = Tab[]

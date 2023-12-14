@@ -1,45 +1,51 @@
 <template>
-  <header class="header">
-    <v-container>
-      <div class="header__wrap">
-        <router-link
-          to="/"
-          class="header__logo"
-        >
-          <img
-            src=""
-            alt="logo"
-          >
-        </router-link>
-        <nav class="header__menu menu">
-          <ul class="menu__list">
-            <li
-              v-for="item in menuList"
-              :key="item.id"
-              class="menu__item"
-            >
-              <router-link
-                :to="item.to"
-                class="menu__link"
-              >{{ item.text }}</router-link>
-            </li>
-          </ul>
-        </nav>
-        <div class="header__auth">
-          <v-button
-            v-if="!isAuth"
-            type="login"
-          >
-            <template #text> Войти </template>
-          </v-button>
-          <router-link
-            v-if="isAuth"
-            to="/profile"
-          > Профиль </router-link>
-        </div>
-      </div>
-    </v-container>
-  </header>
+    <header class="header">
+        <v-container>
+            <div class="header__wrap">
+                <router-link
+                    to="/"
+                    class="header__logo"
+                >
+                    <img
+                        src=""
+                        alt="logo"
+                    >
+                </router-link>
+                <nav class="header__menu menu">
+                    <ul class="menu__list">
+                        <li
+                            v-for="item in menuList"
+                            :key="item.id"
+                            class="menu__item"
+                        >
+                            <router-link
+                                :to="item.to"
+                                class="menu__link"
+                            >
+                                {{ item.text }}
+                            </router-link>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header__auth">
+                    <v-button
+                        v-if="!isAuth"
+                        type="login"
+                    >
+                        <template #text>
+                            Войти
+                        </template>
+                    </v-button>
+                    <router-link
+                        v-if="isAuth"
+                        to="/profile"
+                    >
+                        Профиль
+                    </router-link>
+                </div>
+            </div>
+        </v-container>
+    </header>
 </template>
 
 <script lang="ts" setup>

@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <slot />
-  </div>
+    <div class="container">
+        <slot />
+    </div>
 </template>
 
 <style lang="scss" scoped>

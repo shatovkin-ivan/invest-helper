@@ -1,7 +1,7 @@
 <template>
-  <footer>
-    <v-container> footer </v-container>
-  </footer>
+    <footer>
+        <v-container> footer </v-container>
+    </footer>
 </template>
 
 <script lang="ts" setup>

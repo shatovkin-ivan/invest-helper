@@ -1,15 +1,14 @@
 <template>
-  <section class="content">
-    <v-container>
-      <slot />
-    </v-container>
-    
-  </section>
+    <section class="content">
+        <v-container>
+            <slot />
+        </v-container>
+    </section>
 </template>
 
 <script lang="ts" setup>
 
-import VContainer from './VContainer.vue'
+import VContainer from './VContainer.vue';
 
 </script>
 

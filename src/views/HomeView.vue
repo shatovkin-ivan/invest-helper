@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <main>
-    главная
-  </main>
+    <main>
+        главная
+    </main>
 </template>

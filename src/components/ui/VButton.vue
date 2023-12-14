@@ -1,16 +1,16 @@
 <template>
-  <button
-    class="button"
-    :class="type"
-    type="button"
-  >
-    <slot name="icon" />
-    <slot name="text" />
-  </button>
+    <button
+        class="button"
+        :class="type"
+        type="button"
+    >
+        <slot name="icon" />
+        <slot name="text" />
+    </button>
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
+defineProps({
   type: {
     type: String,
     default: ''
