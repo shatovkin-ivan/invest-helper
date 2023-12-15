@@ -69,4 +69,4 @@ const bondsTabs = [
 const selectTab = (e: Tab) => {
   console.log(e);
 };
-</script>@/interfaces/tabs.interfaces
+</script>

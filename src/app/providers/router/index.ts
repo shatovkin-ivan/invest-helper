@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+import HomeView from '@/pages/home';
 
-const router = createRouter({
+export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
@@ -12,9 +12,7 @@ const router = createRouter({
     {
       path: '/bonds',
       name: 'bonds',
-      component: () => import('../views/BondsView.vue')
+      component: () => import('@/pages/bonds')
     }
   ]
 });
-
-export default router;
