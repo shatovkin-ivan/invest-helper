@@ -1,3 +1,3 @@
-import BondsPage from './ui/Bonds.vue'
+import Bonds from './ui/BondsPage.vue';
 
-export default BondsPage
+export default Bonds;
