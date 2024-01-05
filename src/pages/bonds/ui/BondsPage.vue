@@ -14,7 +14,7 @@ import VTabs from '@/components/ui/VTabs.vue';
 import type { Tab } from '@/interfaces/tabs';
 import VContent from '@/components/ui/VContent.vue';
 import BondsList from '@/components/Bonds/BondsList.vue';
-import { BondsFactory } from '@/api/MainApiFactory';
+import { BondsFactory } from '@/shared/api/MainApiFactory';
 
 const bonds = ref([]);
 
